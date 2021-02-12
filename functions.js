@@ -17,11 +17,13 @@ function irUsuarioID(){
 }
 
 
+
 function loadEvents(){
     document.getElementById("irTodasQuests").addEventListener("click", irTodasMisiones);
     document.getElementById("irTodosUsu").addEventListener("click",irTodosUsuarios);
     document.getElementById("scoreMayor0").addEventListener("click",scoreMayor0);
     document.getElementById("irQuests").addEventListener("click",irMissionID);
     document.getElementById("irUsu").addEventListener("click",irUsuarioID);
+    
     
 }

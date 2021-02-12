@@ -4,21 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creación Usuario</title>
+    <title>Actualizar puntuación de un usuario</title>
 </head>
 
 <body>
     <h2>Creación de Usuarios</h2>
-    <form name="formNewQuest" action="formulario.php" method="GET">
-        Name: <input type="text" name="name"></input>
-        </br>
-        Surname: <input type="text" name="surname"></input>
-        </br>
-        Nick: <input type="text" name="nick"></input>
-        </br>
-        Password: <input type="text" name="password"></input>
-        </br>
-        Score: <input type="number" min="0" step="5"  name="score"></input>
+    <form name="formNewQuest" action="actualizarScore.php" method="GET">
+        Id del Usuario: <input type="number" min="0" name="id"></input>    
+    </br>
+        Score: <input type="number"  min="0" step="5" name="score" ></input>
         <input type="submit"></input>
     </form>
     </br>

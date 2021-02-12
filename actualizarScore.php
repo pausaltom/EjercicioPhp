@@ -10,10 +10,7 @@
 <body>
     <?php
 
-    $name = $_GET['name'];
-    $surname = $_GET['surname'];
-    $nick = $_GET['nick'];
-    $password = $_GET['password'];
+    $id = $_GET['id'];
     $score = $_GET['score'];
     if ($score == null) {
         $score = 0;
@@ -25,22 +22,22 @@
         echo ("Connect failed: " . $mysqli->connect_error);
         exit();
     }
-    $comprobacion = $mysqli->query("SELECT * from users WHERE nick='$nick'");
-    if (mysqli_num_rows($comprobacion) > 0) {
-        echo ("Ya existe un usuario con este nick");
+    $comprobacion = $mysqli->query("SELECT * from users WHERE id=$id");
+    if (mysqli_num_rows($comprobacion) <= 0) {
+        echo ("No existe ningún usuario con este identificador");
     } else {
-        $result = $mysqli->query("INSERT INTO users(name,surname,nick,password,score) VALUES ('$name', '$surname','$nick','$password',$score)");
-        echo("Usuario creado con exito!!");
+        $result = $mysqli->query("UPDATE users SET score=$score WHERE users.id = $id");
+        echo("Score del usuario actualizado con exito!!");
     }
     echo ($mysqli->error);
     $mysqli->close();
     ?>
     </br>
-    <button id="mainPage"> Crear otro usuario </button>
+    <button id="mainPage"> Actualizar otro registro </button>
     <script type="text/javascript">
         document.getElementById("mainPage").addEventListener("click", goBack);
         function goBack() {
-            window.location = "./formulario.html";
+            window.location = "./formularioScore.html";
         }
     </script>
 </body>
