@@ -14,18 +14,17 @@
             exit();
         }
         
-        $result=$mysqli->query("SELECT * from users");
+        $result=$mysqli->query("SELECT * from users where score>0");
 
         echo("<b>Score Mayor que 0 : </b>");
         echo("</br>");
 
         while($row = $result->fetch_object())
         {
-            if (($row->score > 0)) {
-                echo($row->id." / ".$row->name." / ".$row->surname." / ".$row->nick." / ".$row->password." / ".$row->score."<br/>");
-            }
-            
+        echo($row->id." / ".$row->name." / ".$row->surname." / ".$row->nick." / ".$row->password." / ".$row->score."<br/>");
         }
+            
+        
         
         $result->free();
         $mysqli->close();

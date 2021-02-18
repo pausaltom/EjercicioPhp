@@ -11,9 +11,7 @@
     <?php
     $mysqli = new mysqli("localhost", "root", "", "missions");
     $ident = $_GET['numberUsu'];
-    if ($ident==null) {
-        $ident = 999999999;
-    }
+    
     if ($mysqli->connect_errno) {
         echo ("Connect failed: " . $mysqli->connect_error);
         exit();

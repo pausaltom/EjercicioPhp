@@ -12,9 +12,7 @@
     $mysqli = new mysqli("localhost", "root", "", "missions");
     $ident = $_GET['number'];
 
-    if ($ident==null) {
-        $ident = 99999999;
-    }
+   
     
     if ($mysqli->connect_errno) {
         echo ("Connect failed: " . $mysqli->connect_error);
